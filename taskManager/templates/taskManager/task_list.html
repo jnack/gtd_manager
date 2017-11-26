@@ -1,15 +1,19 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>GTD Task Manager</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/taskManager.css' %}">
 	</head>
 	<body>
 		<div>
-			<h1 align='center'><a href="/">GTD Task Manager</a></h1>
+			<h1 class="page-header"><a href="/">GTD Task Manager</a></h1>
 		</div>
 
-		<div>
-			<h3 align='center', padding=5px>"In" List</h3>
-			<table align='center', padding=3>
+		<div align='center'>
+			<h3 class="list-header">"In" List</h3>
+			<table>
 				<tr>
 					<th>Task</th>
 					<th>Due Date</th>
@@ -18,12 +22,12 @@
 					<th>Delegated to</th>
 				</tr>	
 				{% for task in tasks %}
-				<tr>
+				<tr class="task-row">
 					<td>{{ task.description }}</td>
-					<td>{{ task.due_date }}</td>
-					<td>{{ task.context }}</td>
-					<td>{{ task.project }}</td>
-					<td>{{ task.delegated_to }}</td>
+					<td>{{ task.due_date|default_if_none:"" }}</td>
+					<td>{{ task.context|default_if_none:"" }}</td>
+					<td>{{ task.project|default_if_none:"" }}</td>
+					<td>{{ task.delegated_to|default_if_none:"" }}</td>
 				</tr>
 				{% endfor %}
 			</table>

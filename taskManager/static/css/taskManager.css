@@ -1,0 +1,38 @@
+.page-header {
+	text-align: center;
+	background-color: #282858;
+	font-color: #FFFFFF;
+	padding: 10px;
+	align: center;
+}
+
+.list-header {
+	text-align: center;
+	align: center;
+	background-color: #EDEDF7;
+	padding: 10px
+}
+
+table {
+	align: center;
+	width: 85%;
+}
+
+.task-row {
+	border-top: thin dashed #7F7F97;
+	padding-top: 5px;
+}
+
+th {
+	text-align: center;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+td {
+	text-align: center;
+	align: center;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
