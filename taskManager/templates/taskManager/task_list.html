@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>GTD Task Manager</title>
+	</head>
+	<body>
+		<div>
+			<h1 align='center'><a href="/">GTD Task Manager</a></h1>
+		</div>
+
+		<div>
+			<h3 align='center', padding=5px>"In" List</h3>
+			<table align='center', padding=3>
+				<tr>
+					<th>Task</th>
+					<th>Due Date</th>
+					<th>Context</th>
+					<th>Project</th>
+					<th>Delegated to</th>
+				</tr>	
+				{% for task in tasks %}
+				<tr>
+					<td>{{ task.description }}</td>
+					<td>{{ task.due_date }}</td>
+					<td>{{ task.context }}</td>
+					<td>{{ task.project }}</td>
+					<td>{{ task.delegated_to }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</body>
+</html>
